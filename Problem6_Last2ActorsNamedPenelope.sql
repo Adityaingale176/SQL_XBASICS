@@ -1,0 +1,2 @@
+-- Create a query that retrieves the last 2 actors from the actor table with the first name PENELOPE. Include the actor_id, first_name, and last_name columns in your result. Rename the actor_id, first_name, and last_name columns to Actor ID, First Name, and Last Name, respectively.
+-- Write Query Here
