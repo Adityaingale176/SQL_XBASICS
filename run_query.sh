@@ -5,7 +5,7 @@
 # Usage: ./script.sh --input /path/to/query.sql
 
 DB_USER="root"
-DB_PASS="Crio123"
+DB_PASS=""
 DB_NAME="sakila"
 DB_FILE="data/sakila.sql"
 
@@ -23,11 +23,11 @@ if [ -z "$QUERY_FILE" ]; then
 fi
 
 echo "Initializing MySQL database..."
-mysql -u $DB_USER -p$DB_PASS -e "DROP DATABASE IF EXISTS $DB_NAME; CREATE DATABASE $DB_NAME;"
-mysql -u $DB_USER -p$DB_PASS $DB_NAME < $DB_FILE
+sudo mysql -u $DB_USER -e "DROP DATABASE IF EXISTS $DB_NAME; CREATE DATABASE $DB_NAME;"
+sudo mysql -u $DB_USER $DB_NAME < $DB_FILE
 
 echo "Running query from $QUERY_FILE..."
-mysql -u $DB_USER -p$DB_PASS $DB_NAME < $QUERY_FILE  > /dev/null 2>&1
+sudo mysql -u $DB_USER $DB_NAME < $QUERY_FILE  > /dev/null 2>&1
 
 echo "Query results:"
-mysql -u $DB_USER -p$DB_PASS $DB_NAME -e "$(cat $QUERY_FILE)"
+sudo mysql -u $DB_USER $DB_NAME -e "$(cat $QUERY_FILE)"
