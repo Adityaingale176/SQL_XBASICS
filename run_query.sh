@@ -1,3 +1,5 @@
+# CRIO_SOLUTION_AND_STUB_START_MODULE_EXERCISES
+# CRIO_SOLUTION_AND_STUB_END_MODULE_EXERCISES
 #!/bin/bash
 
 # Usage: ./script.sh --input /path/to/query.sql
@@ -5,7 +7,7 @@
 DB_USER="root"
 DB_PASS=""
 DB_NAME="sakila"
-DB_FILE="data/db.sql"
+DB_FILE="data/sakila.sql"
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
